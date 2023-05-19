@@ -5,3 +5,20 @@
 .pricing-header {
     max-width: 700px;
 }
+
+.navbar-nav .nav-link {
+    color: white
+}
+
+.navbar-nav .nav-link:hover {
+    opacity: .8
+}
+
+.navbar-nav .nav-link.active {
+    color: white;
+    border-radius: 0 !important;
+    border-bottom: solid 2px #f8d7da;
+    /* background-color: #f8d7da */
+}
+
+

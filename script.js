@@ -28,18 +28,18 @@ $("#btn-cargar-solicitudes").on("click", function (event) {
                 link_whatsapp = link_whatsapp.replaceAll('\n', '%0a')
 
 
-                cardTemplate = `<div class="col d-flex align-items-stretch">
-            <div class="card mb-4 rounded-4 shadow w-100">
-                <div class="card-header py-3 bg-white d-flex justify-content-between align-items-center rounded-top-4">
+                cardTemplate = `<div class="col d-flex align-items-stretch ">
+            <div class="card mb-4 rounded-4 shadow w-100 border border-danger">
+                <div class="card-header border-danger border-3 py-3 bg-white d-flex justify-content-between align-items-center rounded-top-4">
                     <h4 id="nombre-donatario" class="text-start">${data.nombre_apellido_donatario}</h4>
                     <div class="fs-5">
                         <a href="javascript:void(0)" class="link-dark" data-bs-toggle="tooltip" data-bs-title="Eliminar"><i class="bi bi-trash"></i></a>
                         <a href="${link_whatsapp}" class="link-danger" data-bs-toggle="tooltip" data-bs-title="Compartir en whatsapp"><i class="bi bi-share"></i></a>
                     </div>
                 </div>
-                <div class="card-body text-start">
+                <div class="card-body text-start ">
                     <p class="d-flex justify-content-between">
-                        Teléfono
+                        Teléfono:
                         <span id="telefono">${data.telefono_contacto}</span>
                     </p>
                     <p class="d-flex justify-content-between">
@@ -47,7 +47,7 @@ $("#btn-cargar-solicitudes").on("click", function (event) {
                         <span id="telefono">${data.cedula_donatario}</span>
                     </p>
                     <p class="d-flex justify-content-between">
-                        Lugar de donación
+                        Lugar de donación:
                         <span id="telefono">${data.establecimiento}</span>
                     </p>
                     <p class="d-flex justify-content-between">
@@ -55,15 +55,15 @@ $("#btn-cargar-solicitudes").on("click", function (event) {
                         <span id="telefono">${data.tipo_sangre}</span>
                     </p>
                     <p class="d-flex justify-content-between">
-                        Volúmenes
+                        Volúmenes:
                         <span id="telefono">${data.volumenes_necesarios}</span>
                     </p>
                     <p class="d-flex justify-content-between">
-                        Fecha Limite
+                        Fecha Limite:
                         <span id="telefono">${data.fecha_limite}</span>
                     </p>
                 </div>
-                <div class="card-footer ">
+                <div class="card-footer border-danger">
                     <span id="solicitud" class="fs-5">${data.solicitud}</span>
                 </div>
             </div>
