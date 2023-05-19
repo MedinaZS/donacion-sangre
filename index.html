@@ -19,11 +19,11 @@
 
 	<div class="container-fluid py-3 px-5">
 		<header>
-			<nav class="navbar navbar-expand-lg border-bottom p-0">
+			<nav class="navbar navbar-expand-lg border-bottom pb-2">
 				<div class="container-fluid p-0">
 					<a href="#" class="navbar-brand">
-						<i class="fs-3 bi bi-heart-pulse-fill me-3"></i>
-						<span class="fs-4">Donación de Sangre</span>
+						<i class="fs-3 bi bi-heart-pulse-fill me-1"></i>
+						<span class="fs-4 d-none d-sm-inline">Donación de Sangre</span>
 					</a>
 
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -58,56 +58,18 @@
 
 
 		<main>
-			<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 mb-3 text-center">
-				<div class="col">
-					<div class="card mb-4 rounded-4 shadow">
-						<div class="card-header py-3 bg-white d-flex justify-content-between align-items-center rounded-top-4">
-							<h4 id="nombre-donatario" class="text-start">Nombre Donatario</h4>
-							<div class="fs-4">
-								<a href="javascript:void(0)" class="link-dark"><i class="bi bi-trash"></i></a>
-								<a href="javascript:void(0)" class="link-danger"><i class="bi bi-share"></i></a>
-							</div>
-						</div>
-						<div class="card-body text-start">
-							<p class="d-flex justify-content-between">
-								Teléfono
-								<span id="telefono">98732849</span>
-							</p>
-							<p class="d-flex justify-content-between">
-								C.I:
-								<span id="telefono">98732849</span>
-							</p>
-							<p class="d-flex justify-content-between">
-								Lugar de donación
-								<span id="telefono">98732849</span>
-							</p>
-							<p class="d-flex justify-content-between">
-								RH:
-								<span id="telefono">98732849</span>
-							</p>
-							<p class="d-flex justify-content-between">
-								Volúmenes
-								<span id="telefono">98732849</span>
-							</p>
-							<p class="d-flex justify-content-between">
-								Fecha Limite
-								<span id="telefono">98732849</span>
-							</p>
-						</div>
-						<div class="card-footer ">
-							<span id="solicitud" class="fs-5">token</span>
-						</div>
-					</div>
-				</div>
+			<div id="container-solicitudes" class="row row-cols-1 row-cols-md-3 row-cols-lg-4 mb-3 text-center mt-3">
+				
 			</div>
 		</main>
+		
 
 		<!-- Footer -->
 		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
 			<div class="col-md-4 d-flex align-items-center">
-				<a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none"><i
+				<a href="/" class="me-2 mb-md-0 text-body-secondary text-decoration-none d-flex align-items-center "><i
 						class="bi bi-heart-pulse-fill"></i>
-					<span class="mb-3 mb-md-0 text-body-secondary">Donación de Sangre</span>
+					<span class="ms-3 mb-md-0 text-body-secondary d-none d-sm-inline">Donación de Sangre</span>
 				</a>
 			</div>
 			<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
