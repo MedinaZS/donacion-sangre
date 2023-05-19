@@ -18,7 +18,7 @@ $("#btn-cargar-solicitudes").on("click", function (event) {
                     `Teléfono: ${data.telefono_contacto}\n` +
                     `C.I: ${data.cedula_donatario}\n` +
                     `Lugar donación: ${data.establecimiento}\n` +
-                    `RH: ${data.tipo_sangre}\n` +
+                    `RH: ${type[data.tipo_sangre-1]} \n` +
                     `Volumenes Necesarios: ${data.volumenes_necesarios}\n` +
                     `Fecha Limite: ${data.fecha_limite}\n` +
                     `Solicitud: ${data.solicitud}\n` +
@@ -26,6 +26,9 @@ $("#btn-cargar-solicitudes").on("click", function (event) {
 
                 link_whatsapp = link_whatsapp.replaceAll(' ', '%20')
                 link_whatsapp = link_whatsapp.replaceAll('\n', '%0a')
+                // Symbols for blood types
+                link_whatsapp = link_whatsapp.replace('+', '%2B')
+                link_whatsapp = link_whatsapp.replace('-', '%2D')
 
 
                 cardTemplate = `<div class="col d-flex align-items-stretch ">
@@ -40,31 +43,31 @@ $("#btn-cargar-solicitudes").on("click", function (event) {
                 <div class="card-body text-start ">
                     <p class="d-flex justify-content-between">
                         Teléfono:
-                        <span id="telefono">${data.telefono_contacto}</span>
+                        <span>${data.telefono_contacto}</span>
                     </p>
                     <p class="d-flex justify-content-between">
                         C.I:
-                        <span id="telefono">${data.cedula_donatario}</span>
+                        <span>${data.cedula_donatario}</span>
                     </p>
                     <p class="d-flex justify-content-between">
                         Lugar de donación:
-                        <span id="telefono">${data.establecimiento}</span>
+                        <span>${data.establecimiento}</span>
                     </p>
                     <p class="d-flex justify-content-between">
                         RH:
-                        <span id="telefono">${data.tipo_sangre}</span>
+                        <img class='icon-blood-type' src = "${chooseImage(data.tipo_sangre)}"></img>
                     </p>
                     <p class="d-flex justify-content-between">
                         Volúmenes:
-                        <span id="telefono">${data.volumenes_necesarios}</span>
+                        <span>${data.volumenes_necesarios}</span>
                     </p>
                     <p class="d-flex justify-content-between">
                         Fecha Limite:
-                        <span id="telefono">${data.fecha_limite}</span>
+                        <span>${data.fecha_limite}</span>
                     </p>
                 </div>
                 <div class="card-footer border-danger">
-                    <span id="solicitud" class="fs-5">${data.solicitud}</span>
+                    <span class="fs-5">${data.solicitud}</span>
                 </div>
             </div>
         </div>`
@@ -80,5 +83,11 @@ $("#btn-cargar-solicitudes").on("click", function (event) {
 function enableTooltips() {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+}
+
+let type = ["A+", "A-", "B+", "B-", "O+", "O-", "AB-", "AB+"]
+
+function chooseImage(tipo_sangre) {
+    return 'https://res.cloudinary.com/dhzoxdo6q/image/upload/donacion-sangre/'+type[tipo_sangre-1]+'.png'
 }
 
